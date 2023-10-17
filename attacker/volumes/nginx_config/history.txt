@@ -1,0 +1,210 @@
+    1  ls
+    2  clear
+    3  ls
+    4  cd var/www/html/
+    5  ls
+    6  touch secret.txt
+    7  echo this is a secret >> secret.txt 
+    8  ls
+    9  exit
+   10  ls
+   11  cd var/www/html/
+   12  ls
+   13  ll
+   14  whoami
+   15  grep 1000 /etc/passwd
+   16  ls
+   17  less contact.php 
+   18  cat contact.php 
+   19  clear
+   20  ls
+   21  cat debug.php 
+   22  ps -aux
+   23  ll
+   24  ps -aux
+   25  clear
+   26  ls
+   27  history
+   28  service nginx restart
+   29  ls
+   30  exit
+   31  cat /etc/nginx/nginx.conf 
+   32  xit
+   33  exit
+   34  cat /etc/passwd
+   35  su - www-data php debug.php 
+   36  ls
+   37  ls user_info/
+   38  ls
+   39  php debug.php 
+   40  clear
+   41  ps -aux
+   42  nano /etc/nginx/nginx.conf 
+   43  service restart nginx
+   44  service nginx restart
+   45  ps -aux
+   46  vim /etc/php/8.1/fpm/php-fpm.conf 
+   47  nano /etc/php/8.1/fpm/php-fpm.conf 
+   48  clear
+   49  apt install vim
+   50  clear
+   51  ls
+   52  history
+   53  nano /etc/nginx/nginx.conf 
+   54  clear
+   55  ls
+   56  vim /etc/php/8.1/fpm/php-fpm.conf 
+   57  vim /etc/php/8.1/fpm/pool.d/www.conf 
+   58  ps -axu
+   59  service php-fpm restart
+   60  service php8.1-fpm restart
+   61  ps -axu
+   62  vim /lib/systemd/system/php7.0-fpm.service
+   63  vim /lib/systemd/system/php8.1-fpm.service 
+   64  service php8.1-fpm restart
+   65  vim /lib/systemd/system/php8.1-fpm.service 
+   66  systemctl daemon-reload
+   67  service
+   68  systemctl
+   69  ps -aux
+   70  service php8.1-fpm restart
+   71  service nginx restart
+   72  ps -aux
+   73  service php8.1-fpm restart
+   74  ps -aux
+   75  vim /lib/systemd/system/php8.1-fpm.service 
+   76  service php8.1-fpm restart
+   77  journalctl
+   78  cat /var/log/php8.1-fpm.log 
+   79  daemon-reload
+   80  reboot
+   81  history
+   82  nc 192.168.0.1 1234 < /lib/systemd/system/php8.1-fpm.service
+   83  apt install nc -y
+   84  apt install netcat -y
+   85  exit
+   86  vim /etc/nginx/sites-available/
+   87  nano /etc/nginx/sites-available/default 
+   88  clear
+   89  ls
+   90  clear
+   91  ls
+   92  cd fi
+   93  cd 
+   94  cd fi
+   95  ls
+   96  clear
+   97  ls
+   98  cd /var/www/html/
+   99  ls
+  100  ll
+  101  chown -R www-data *
+  102  ll
+  103  clear
+  104  ls
+  105  ls user_info/
+  106  less debug.php 
+  107  cat debug.php 
+  108  nano debug.php 
+  109  cat debug.php 
+  110  php debug.php 
+  111  nano debug.php 
+  112  php debug.php 
+  113  clear
+  114  ls
+  115  ll
+  116  ll user_info/
+  117  chgrp -R www-data *
+  118  ll
+  119  ps -aux
+  120  clear
+  121  ps -aux
+  122  servcie restart php-fpm 
+  123  service
+  124  service php-fpm restart
+  125  servcie restart php8.1-fpm 
+  126  ls
+  127  clear
+  128  php debug.php 
+  129  clear
+  130  php debug.php 
+  131  cat debug.php 
+  132  ls
+  133  php debug.php 
+  134  php debug.php  | wc -l
+  135  clear
+  136  su
+  137  exit
+  138  ls
+  139  ps -aux
+  140  servcie restart php8.1-fpm 
+  141  servcie php8.1-fpm restart
+  142  service php8.1-fpm restart
+  143  cat /var/log/php8.1-fpm.log 
+  144  time
+  145  vim /sbin/init
+  146  exit
+  147  php-fpm -R
+  148  php8.1-fpm -R
+  149  search php8.1-fpm
+  150  where php8.1-fpm
+  151  exit
+  152  cat /etc/php/8.1/fpm/php-fpm.conf 
+  153  exit
+  154  ls
+  155  cd /var/www/html/
+  156  ls
+  157  cd ..
+  158  ll
+  159  tail /var/log/php8.1-fpm.log 
+  160  cat /etc/php/8.1/fpm/php-fpm.conf 
+  161  q
+  162  clear
+  163  ll
+  164  chown www-data html/
+  165  chgrp www-data html/
+  166  ll
+  167  cd html/
+  168  ls
+  169  ll
+  170  ls user_info/
+  171  ls
+  172  chmod 777 *
+  173  ls
+  174  ll
+  175  vim /etc/php/8.1/fpm/php-fpm.conf 
+  176  vim /etc/php/8.1/fpm/pool.d/www.conf 
+  177  service php8.1-fpm restart
+  178  ls
+  179  cat debug.php 
+  180  ps -aux
+  181  vim /etc/php/8.1/fpm/pool.d/www.conf 
+  182  service php8.1-fpm restart
+  183* 
+  184  exit
+  185  ls
+  186  cd var/www/html/
+  187  ls
+  188  vim debug.php 
+  189  clear
+  190  ps -aux
+  191  service php8.1-fpm restart
+  192  vim /lib/systemd/system/php8.1-fpm.service
+  193  /usr/sbin/php-fpm8.1 -R
+  194  service php8.1-fpm stop
+  195  /usr/sbin/php-fpm8.1 -R
+  196  ps -aux
+  197  service php8.1-fpm restart
+  198  ps -au
+  199  ps -aux
+  200  clear
+  201  vim /etc/php/8.1/fpm/pool.d/www.conf 
+  202  /usr/sbin/php-fpm8.1 -R
+  203  ps -aux
+  204  service nginx restart
+  205  ps -aux
+  206  service nginx restart
+  207  ps -aux
+  208  history
+  209  cd ..
+  210  history > history.txt
