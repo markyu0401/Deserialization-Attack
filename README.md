@@ -1,6 +1,6 @@
 # Name Of The Attack Wen
-#by Qingchen Yu, Wen
-a building-in-progress project for Wen
+#By Qingchen Yu, Wen
+#A building-in-progress project for Wen
 
 ##Demostration of the attack
 ##Target Audiance 
