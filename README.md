@@ -1,5 +1,5 @@
-# Name Of The Attack Wen
-By Qingchen Yu, Wen <br>
+# Deserialization Attack
+By Qingchen Yu, Zhenyu Wen <br>
 A building-in-progress project for Wen<br>
 
 ##Demostration of the attack
