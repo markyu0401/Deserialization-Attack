@@ -85,7 +85,8 @@ Docker run -d -p 6080:80 <image tag name>
    entered by user, we can see the source code of this file by entering the URL:
    http://<victim's IP address>/debug.php?read=contact.php
 
-11.```
+11.
+   ```
    <?php
    # Omitted some code
    
