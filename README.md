@@ -45,10 +45,10 @@ Docker run -d -p 6080:80 <image tag name>
 ```
 ### Usage
 1. On the attacker-10 vm, open a terminal. To access the attacker-10 vm, on your browser,
-enter the address http://attacker_ip to access the VNC session. You may run ``` docker inspect <image tag name> ``` to find the container's IP address.
+   enter the address http://attacker_ip to access the VNC session. You may run ``` docker inspect          <image tag name> ``` to find the container's IP address.
 
 2. Enter the command apt update -y && apt upgrade -y && apt install
-gobuster -y to install a tool called gobuster.
+   gobuster -y to install a tool called gobuster.
 
 3. Then on the victim-11 vm, open a terminal, type the command
    ```
@@ -57,3 +57,21 @@ gobuster -y to install a tool called gobuster.
    ```
    then type the command ifconfig to check the IP of the server.
 
+4. On the attacker-10 vm, open firefox browser, or install any browser you like. Enter
+   http://victim_ip to the URL bar to access the VNC session
+
+5. Try going through the website like a normal user, is there anywhere you can exploit,
+   anything you can enter?
+
+6. Then, on the attacker vm. use the command gobuster -w
+   /wordlist/wordlist_php http://victim_ip to list the directory and hidden
+   file on the webserver. Feel free to try other web enumeration tools, and use different
+   wordlist as well.
+
+7. After running the gobuster rto enumerate the hidden file on the webserver, you will find a
+   new file called debug.php running on the website. To open debug.php, use the command
+   http://victim_ip/debug.php
+
+8. Now you have found the debug.php, it’s a mistake made by the developer. To access the
+   source code of debug.php, you can enter the URL: viewsource:http://192.168.0.11/debug.php?              read=debug.php to view the source code of the
+   debug.php.
