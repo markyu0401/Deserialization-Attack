@@ -51,8 +51,9 @@ enter the address http://attacker_ip to access the VNC session. You may run ``` 
 gobuster -y to install a tool called gobuster.
 
 3. Then on the victim-11 vm, open a terminal, type the command
-   ``` sudo apt-get update
-       sudo apt-get install net-tools
+   ```
+   sudo apt-get update
+   sudo apt-get install net-tools
    ```
    then type the command ifconfig to check the IP of the server.
 
