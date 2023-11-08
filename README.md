@@ -2,14 +2,14 @@
 By Qingchen Yu, Zhenyu Wen <br>
 A building-in-progress project for Wen<br>
 
-##Demostration of the attack
-##Target Audience
+## Demonstration of the attack
+## Target Audience
 
-###Instructors
+### Instructors
 Suppose you are an instructor teaching cybersecurity concerts. In that case, you can use this example to provide hands-on experience with deserialization, demonstrating how to take data structured from some format and
 rebuild it into an object. <be>
 
-###Students
+### Students
 If you are a student in cybersecurity class, you can get further practical experience with how deserialization/serialization is used to prevent attacks. <br>
 ## Design and Architecture
 This demonstration uses two Docker containers, one each for attacker, victim, and secure. Attacker functions by using 'gobuster' to attack the victim and secure, the host of a website, the website secure is protected. <be>
