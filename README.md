@@ -2,7 +2,16 @@
 By Qingchen Yu, Zhenyu Wen <br>
 A building-in-progress project for Wen<br>
 
-## Demonstration of the attack
+## Description of the attack
+Serialization is the process of turning some object into a data format that can be restored later.
+People often serialize objects in order to save them to storage, or to send as part of
+communications. In php, the code looks like this: serialize(mixed $value): string
+
+Deserialization is the reverse of that process, taking data structured from some format, and
+rebuilding it into an object. Today, the most popular data format for serializing data is JSON.
+Before that, it was XML. In php, the code looks like this:
+unserialize(string $data, array $options = []): mixed
+
 ## Target Audience
 
 ### Instructors
