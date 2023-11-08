@@ -43,3 +43,16 @@ Docker run -d -p 80:80 <image tag name>
 Docker run -d -p 443:443 <image tag name>
 Docker run -d -p 6080:80 <image tag name>
 ```
+### Usage
+1. On the attacker-10 vm, open a terminal. To access the attacker-10 vm, on your browser,
+enter the address http://attacker_ip to access the VNC session. You may run ``` docker inspect <image tag name> ``` to find the container's IP address.
+
+2. Enter the command apt update -y && apt upgrade -y && apt install
+gobuster -y to install a tool called gobuster.
+
+3. Then on the victim-11 vm, open a terminal, type the command
+   ``` sudo apt-get update
+       sudo apt-get install net-tools
+   ```
+   then type the command ifconfig to check the IP of the server.
+
