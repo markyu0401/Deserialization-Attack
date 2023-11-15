@@ -1,6 +1,5 @@
 # Deserialization Attack
 By Qingchen Yu, Zhenyu Wen <br>
-A building-in-progress project for Wen<br>
 
 ## Description of the attack
 Serialization is the process of turning some object into a data format that can be restored later.
