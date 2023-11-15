@@ -23,7 +23,7 @@ If you are a student in cybersecurity class, you can get further practical exper
 This demonstration uses three Docker containers, one each for attacker, victim, and secure. Attacker functions by using 'gobuster' to attack the victim and secure, the host of a website, the website secure is protected. <br>
 
 ## Installation and Usage
-The recommended approach to running this set of containers is on CHEESEHub, a web platform for cybersecurity demonstrations. CHEESEHub provides the necessary resources for orchestrating and running containers on demand. In order to set up this application to be run on CHEESEHub, an application specification needs to be created that configures the Docker image to be used, memory and CPU requirements, and, the ports to be exposed for each of the three containers. The JSON spec for this SSH Honeypot demonstration can be found here.
+The recommended approach to running this set of containers is on CHEESEHub, a web platform for cybersecurity demonstrations. CHEESEHub provides the necessary resources for orchestrating and running containers on demand. In order to set up this application to be run on CHEESEHub, an application specification needs to be created that configures the Docker image to be used, memory and CPU requirements, and, the ports to be exposed for each of the three containers. 
 
 CHEESEHub uses Kubernetes to orchestrate its application containers. You can also run this application on your own Kubernetes installation. For instructions on setting up a minimal Kubernetes cluster on your local machine, refer to Minikube.
 
