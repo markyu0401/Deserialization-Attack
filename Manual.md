@@ -22,7 +22,7 @@
    http://victim_ip/debug.php
 
 8. Now you have found the debug.php, it’s a mistake made by the developer. To access the
-   source code of debug.php, you can enter the URL: viewsource:http://<victim's IP address>/debug.php?              read=debug.php to view the source code of the
+   source code of debug.php, you can enter the URL: ``view-source:http://<victim's IP address>/debug.php?read=debug.php`` to view the source code of the
    debug.php.
 
 9. In the source code of debug.php, there are two Get parameters you can manipulate. One
