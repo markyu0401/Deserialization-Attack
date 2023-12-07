@@ -1,5 +1,5 @@
 1. On the attacker-10 vm, open a terminal. To access the attacker-10 vm, on your browser,
-   enter the address http://attacker_ip to access the VNC session. You may run ``` docker inspect          <image tag name> ``` to find the container's IP address.
+   enter the address http://attacker_ip or ``localhost:6080/`` to access the VNC session. You may run ``` docker inspect          <image tag name> ``` to find the container's IP address.
 
 2. Enter the command ``apt update -y && apt upgrade -y && apt install
    gobuster -y`` to install a tool called gobuster.
