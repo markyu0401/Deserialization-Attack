@@ -4,12 +4,7 @@
 2. Enter the command ``apt update -y && apt upgrade -y && apt install
    gobuster -y`` to install a tool called gobuster.
 
-3. Then on the victim-11 vm, open a terminal, type the command
-   ```
-   sudo apt-get update
-   sudo apt-get install net-tools
-   ```
-   then type the command ifconfig to check the IP of the server.
+3. Type the command ifconfig to check the IP of the server.
 
 4. On the attacker-10 vm, open firefox browser, or install any browser you like. Enter
    http://victim_ip to the URL bar to access the VNC session
@@ -17,8 +12,8 @@
 5. Try going through the website like a normal user, is there anywhere you can exploit,
    anything you can enter?
 
-6. Then, on the attacker vm. use the command gobuster -w
-   /wordlist/wordlist_php http://victim_ip to list the directory and hidden
+6. Then, on the attacker vm. use the command ``gobuster -w
+   /wordlist/wordlist_php -u http://victim_ip`` to list the directory and hidden
    file on the webserver. Feel free to try other web enumeration tools, and use different
    wordlist as well.
 
