@@ -4,7 +4,7 @@
 2. Enter the command ``apt update -y && apt upgrade -y && apt install
    gobuster -y`` to install a tool called gobuster.
 
-3. Type the command ifconfig to check the IP of the server.
+3. Open a terminal in victim. Type the command ifconfig to check the IP of the server.
 
 4. On the attacker-10 vm, open firefox browser, or install any browser you like. Enter
    http://victim_ip to the URL bar to access the VNC session
