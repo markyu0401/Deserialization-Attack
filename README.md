@@ -32,15 +32,15 @@ Before being able to run on either CHEESEHub or Kubernetes, Docker images need t
 ### Installation
 To Build The Container
 ```
-Docker build -t <victim image tag of your choice> .
-Docker build -t <secure image tag of your choice> .
-Docker build -t <attacker image tag of your choice> .
+docker build -t <victim image tag of your choice> .
+docker build -t <secure image tag of your choice> .
+docker build -t <attacker image tag of your choice> .
 ```
 After images are built, containers have to run in a certain condition
 ```
-Docker run -d -p 80:80 <image tag name>
-Docker run -d -p 443:443 <image tag name>
-Docker run -d -p 6080:80 <image tag name>
+docker run -d -p 80:80 <image tag name>
+docker run -d -p 443:443 <image tag name>
+docker run -d -p 6080:80 <image tag name>
 ```
 ### Usage
 CHEESEHub has the instructions provided by the SEED Project. The user will have to compile the programs available and figure out how to carry out the steps in the instructions. 
