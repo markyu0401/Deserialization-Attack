@@ -119,7 +119,7 @@ debug.php.
 
 In the source code of debug.php, there are two Get parameters you can manipulate. One is called read and the other is execute. read can let you check the source code of the websites and execute will allow you to execute file contain PHP source code
 
-![gobuster-command-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ef09ec31-978e-4db2-9bf4-133236cdac82)
+![gobuster-command-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/45b13c9f-7732-4ad2-b2e0-ae1cebaef628)
 
 When you run the gobuster tool, I am sure you have also found another php file called contact.php. contact.php is the file where the website will process the contact information entered by user, we can see the source code of this file by entering the URL: http://<victim's IP address>/debug.php?read=contact.php
 
