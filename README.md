@@ -17,7 +17,7 @@ unserialize(string $data, array $options = []): mixed
 Suppose you are an instructor teaching cybersecurity concerts. In that case, you can use this example to provide hands-on experience with deserialization, demonstrating how to take data structured from some format and
 rebuild it into an object. <br>
 
-### Students
+### Students 
 If you are a student in cybersecurity class, you can get further practical experience with how deserialization/serialization is used to prevent attacks. <br>
 ## Design and Architecture
 This demonstration uses three Docker containers, one each for attacker, victim, and secure. Attacker functions by using 'gobuster' to attack the victim and secure, the host of a website, the website secure is protected. <br>
