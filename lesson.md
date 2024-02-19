@@ -1,7 +1,7 @@
-
+---
 title: "Deserialization Attack "
-teaching: 30 minutes
-exercises: 30 minutes
+teaching: 30
+exercises: 30
 questions:
 - "What is deserialization/serialization?"
 - "What are the php magic methods?"
@@ -19,7 +19,7 @@ communications. In php, the code looks like this: serialize(mixed $value): strin
 rebuilding it into an object. Today, the most popular data format for serializing data is JSON.
 Before that, it was XML. In php, the code looks like this:
 unserialize(string $data, array $options = []): mixed
-
+---
 
 ## SSH Honeypot
 
