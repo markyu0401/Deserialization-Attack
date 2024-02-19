@@ -112,7 +112,7 @@ After running the gobuster rto enumerate the hidden file on the webserver, you w
 ![webpage-debug](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/1bb997d9-f217-47a0-84de-007e821cc54e)
 
 Now you have found the debug.php, it’s a mistake made by the developer. To access the
-source code of debug.php, you can enter the URL: viewsource:http://192.168.0.11/debug.php?read=debug.php to view the source code of the
+source code of debug.php, you can enter the URL: viewsource:http://<victim's IP address>/debug.php?read=debug.php to view the source code of the
 debug.php.
 
 ![webpage-debug-2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ad22bd72-e436-4949-8ff3-d512471af9f8)
@@ -122,4 +122,38 @@ In the source code of debug.php, there are two Get parameters you can manipulate
 ![gobuster-command-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/45b13c9f-7732-4ad2-b2e0-ae1cebaef628)
 
 When you run the gobuster tool, I am sure you have also found another php file called contact.php. contact.php is the file where the website will process the contact information entered by user, we can see the source code of this file by entering the URL: http://<victim's IP address>/debug.php?read=contact.php
+
+![webpage-debug-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/abff5019-6327-446b-b0fc-91bf59594dfb)
+
+Upon reviewing the source code of contact.php file, what have you found? There is a critical vulnerability in the file, a deserialization vulnerability.
+
+'''\<?php
+# Omitted some code
+
+$new_customer = new customer;
+$new_customer->name = $name;
+$new_customer->email = $email;
+$new_customer->comment = $comment;
+$temp = serialize($new_customer);
+
+# Omitted some code
+
+class customer
+{
+   public $name;
+   public $email;
+   public $comment;
+   public function __sleep()
+   {
+      // Write the content to file once the object is serialized
+      $filename = $this->name . '_' . $this->email;
+      file_put_contents("./user_info/$filename", $this-
+>comment, FILE_USE_INCLUDE_PATH);
+   }
+}
+?>
+'''
+
+
+
 
