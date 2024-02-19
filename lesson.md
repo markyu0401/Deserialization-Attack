@@ -10,7 +10,6 @@ objectives:
 - "Describe deserialization attacks."
 - "Understand simple exploit."
 - "Write code that avoid deserialization attacks."
-
 What is deserialization/serialization?
 - Serialization is the process of turning some object into a data format that can be restored later.
 People often serialize objects in order to save them to storage, or to send as part of
