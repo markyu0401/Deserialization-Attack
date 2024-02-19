@@ -43,6 +43,7 @@ The code defines a PHP class called "test" using the "class" keyword. The class 
 method called "__sleep()". The "__sleep()" method is a magic method in PHP that is
 automatically called when you try to serialize an object of this class using the "serialize()"
 function.
+
 ![desersleep](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/bea89035-748a-4d46-ae38-448ebcfdb8ac)
 
 Within the "__sleep()" method, the code echoes the string "__sleep method called" using the
@@ -79,7 +80,13 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 
 ### Demonstration
 We will start by first adding the Deserialization Attack application:
+
 ![add_app](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/16e609c9-5446-4c6c-b70a-c7885dff74d9)
 Next, click the View link to go to the application-specific page and start the application containers:
+
 ![start](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/5d192067-3366-4c4e-ae9e-106f158a6288)
 Once all the containers have started, launch the hacker and victim’s web interfaces in separate browser tabs by clicking the icon next to the container’s name:
+
+Click the icon next to deserialization to access the VNC session 
+
+Open the terminal and Enter the command "apt update -y && apt upgrade -y && apt install gobuster -y" to install a tool called gobuster.
