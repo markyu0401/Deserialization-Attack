@@ -127,7 +127,7 @@ When you run the gobuster tool, I am sure you have also found another php file c
 
 Upon reviewing the source code of contact.php file, what have you found? There is a critical vulnerability in the file, a deserialization vulnerability.
 
-'''
+```
 \<?php
 # Omitted some code
 
@@ -153,7 +153,7 @@ class customer
    }
 }
 ?>
-'''
+```
 
 
 
