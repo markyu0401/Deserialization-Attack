@@ -13,16 +13,16 @@ objectives:
 ---
 
 
-## SSH Honeypot
+## What is deserialization/serialization?
 
-The SSH Honeypot is a special instance of a "honeypot" in computer security that provides the impression of a running service that is
-open to attacks while simply logging the ensuing attacks with no adverse effects to the underlying machine. In this case, the standard SSH
-ports (22 and 2222) are left open for incoming SSH connections which are simply logged. At the same time, SSH access to the machine is available
-for valid users through a different non-standard port that has been communicated to them separately.
+Serialization is the process of turning some object into a data format that can be restored later.
+People often serialize objects in order to save them to storage, or to send as part of
+communications. In php, the code looks like this: serialize(mixed $value): string
 
-The logged messages contain the IP address where the SSH connection request originated and the username and password that a potential *attacker*
-used. This can help track attack vectors and identify leaked or hacked usernames or passwords by comparing against an organization's database for
-timely security measures.
+Deserialization is the reverse of that process, taking data structured from some format, and
+rebuilding it into an object. Today, the most popular data format for serializing data is JSON.
+Before that, it was XML. In php, the code looks like this:
+unserialize(string $data, array $options = []): mixed
 
 ### Demonstration
 
