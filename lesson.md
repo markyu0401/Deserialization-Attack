@@ -79,56 +79,56 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 "unserialize()".
 
 ### Demonstration
-We will start by first adding the Deserialization Attack application:
+1. We will start by first adding the Deserialization Attack application:
 
 ![add_app](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/16e609c9-5446-4c6c-b70a-c7885dff74d9)
 
-Next, click the View link to go to the application-specific page and start the application containers:
+2. Next, click the View link to go to the application-specific page and start the application containers:
 
 ![start](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/5d192067-3366-4c4e-ae9e-106f158a6288)
 
-Open the victim terminal and type 'ifconfig' to check the IP address for victim server  
+3. Open the victim terminal and type 'ifconfig' to check the IP address for victim server  
 
 ![victim terminal](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/33064a4c-5a86-4e51-bb3c-44a057f0f4e9)
 
 ![victim-ip](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/cf19b27a-1609-480e-bee0-5206a11fc098)
 
-launch the hacker’s web interfaces in separate browser tabs by clicking the icon next to the deserialization:
+4. launch the hacker’s web interfaces in separate browser tabs by clicking the icon next to the deserialization:
 
 ![attacker-link](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f39fc9c6-f46f-4476-84e2-03a2ec342e02)
 
-On the deserialization vm, open firefox browser, or install any browser you like. Enter http://victim_ip to the URL bar to access the VNC session
+5. On the deserialization vm, open firefox browser, or install any browser you like. Enter http://victim_ip to the URL bar to access the VNC session
 
 ![attacker-victim-vnc](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f2223721-b7fd-4914-abb3-825c9de2ec30)
 
-Try going through the website like a normal user, is there anywhere you can exploit, anything you can enter?
+6. Try going through the website like a normal user, is there anywhere you can exploit, anything you can enter?
 
 Then, on the deserialization vm. use the command gobuster -w /wordlist/wordlist_php -u http://victim_ip to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
 
 ![gobuster-command-1](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/8b1e4422-43c3-426b-90aa-eaa4a78358cc)
 
-After running the gobuster rto enumerate the hidden file on the webserver, you will find a new file called debug.php running on the website. To open debug.php, use the command http://victim_ip/debug.php
+7. After running the gobuster rto enumerate the hidden file on the webserver, you will find a new file called debug.php running on the website. To open debug.php, use the command http://victim_ip/debug.php
 
 ![webpage-debug](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/1bb997d9-f217-47a0-84de-007e821cc54e)
 
-Now you have found the debug.php, it’s a mistake made by the developer. To access the
+8. Now you have found the debug.php, it’s a mistake made by the developer. To access the
 source code of debug.php, you can enter the URL: viewsource:http://<victim's IP address>/debug.php?read=debug.php to view the source code of the
 debug.php.
 
 ![webpage-debug-2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ad22bd72-e436-4949-8ff3-d512471af9f8)
 
-In the source code of debug.php, there are two Get parameters you can manipulate. One is called read and the other is execute. read can let you check the source code of the websites and execute will allow you to execute file contain PHP source code
+9. In the source code of debug.php, there are two Get parameters you can manipulate. One is called read and the other is execute. read can let you check the source code of the websites and execute will allow you to execute file contain PHP source code
 
 ![gobuster-command-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/45b13c9f-7732-4ad2-b2e0-ae1cebaef628)
 
-When you run the gobuster tool, I am sure you have also found another php file called contact.php. contact.php is the file where the website will process the contact information entered by user, we can see the source code of this file by entering the URL: http://<victim's IP address>/debug.php?read=contact.php
+10. When you run the gobuster tool, I am sure you have also found another php file called contact.php. contact.php is the file where the website will process the contact information entered by user, we can see the source code of this file by entering the URL: http://<victim's IP address>/debug.php?read=contact.php
 
 ![webpage-debug-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/abff5019-6327-446b-b0fc-91bf59594dfb)
 
-Upon reviewing the source code of contact.php file, what have you found? There is a critical vulnerability in the file, a deserialization vulnerability.
+11. Upon reviewing the source code of contact.php file, what have you found? There is a critical vulnerability in the file, a deserialization vulnerability.
 
 ```
-\<?php
+<?php
 # Omitted some code
 
 $new_customer = new customer;
@@ -154,6 +154,35 @@ class customer
 }
 ?>
 ```
+
+12. A closer look at the preceding code reveals that the vulnerability exists in the magic function __sleep() defined in the class customer. The logic in the function __sleep() shows that once an instance of class customer is serialized, it will write a file to a directory in the web root directory.
+
+13. Now we know there is a vulnerability in the code, how do we use this vulnerability?
+Recall earlier I asked you to find the parameter you can interact with on the website,
+there is a webpage where you can enter user defined text. To navigate to this page, enter
+the URL http://victim_ip/contact.html to access the page.
+
+![attacker-victim-vnc2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/d97ddab3-76ae-43a0-853a-9f3a63b07f6b)
+
+14. On this page, there are three parameters you can define: name, email, and comment. If you still remember the source code of the contact.php file, you can make an educated guess that the contact.php will handle the post request sent by contact.html form. If you want to verify that, you can also download burpsuites and verify. Or you can also examine the source code of the contact.html page to see where the POST request is sent to.
+
+![demodiagram2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/08579174-32fa-4df9-bcfd-96bb608d5d2b)
+
+15. To exploit the vulnerability we see before, enter test in the name bar, enter user.php in the
+email bar, and <?php $exec = system( $_GET['cmd'] ) ?> in the comment section. After
+entering all the text, click submit to plant the webshell
+
+![demodiagram3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/47192691-5a79-4f79-88e7-0f2e0384e999)
+
+16. On the attacker VM, use the command curl
+http://victim_ip/user_info/test_user.php?cmd=whoami to test whether the planted
+webshell is working or not.
+
+![result](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f3c29b0e-0756-48ce-97bf-e5058091f85f)
+
+17. A secure server is running on the Secure server's IP address, you are welcome to try attacking
+it, but it does not have the deserialization vulnerability and misconfiguration present on
+the victim VM.
 
 
 
