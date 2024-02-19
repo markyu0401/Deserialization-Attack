@@ -82,14 +82,18 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 We will start by first adding the Deserialization Attack application:
 
 ![add_app](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/16e609c9-5446-4c6c-b70a-c7885dff74d9)
+
 Next, click the View link to go to the application-specific page and start the application containers:
 
 ![start](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/5d192067-3366-4c4e-ae9e-106f158a6288)
-Once all the containers have started, launch the hacker and victim’s web interfaces in separate browser tabs by clicking the icon next to the container’s name:
 
 Open the victim terminal and type 'ifconfig' to check the IP address for victim server  
 
 ![victim terminal](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/33064a4c-5a86-4e51-bb3c-44a057f0f4e9)
 
 ![victim-ip](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/cf19b27a-1609-480e-bee0-5206a11fc098)
+
+launch the hacker’s web interfaces in separate browser tabs by clicking the icon next to the deserialization:
+
+![attacker-link](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f39fc9c6-f46f-4476-84e2-03a2ec342e02)
 
