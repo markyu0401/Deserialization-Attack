@@ -25,6 +25,19 @@ Before that, it was XML. In php, the code looks like this:
 unserialize(string $data, array $options = []): mixed
 ![demodiagram](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/e9ac88ff-50bb-4e5e-802b-989fb8f7e830)
 
+## What are the php magic methods?
+
+In PHP, magic methods are special methods that allow you to define custom behavior for certain
+actions or events that occur on an object. These methods are automatically called by PHP based
+on specific naming conventions, and they override the default behavior of PHP for those actions.
+
+For example, __sleep() is a magic method in PHP that is called automatically when the
+serialize() function is called on an object. PHP checks if the class of the object being serialized
+has a method named __sleep(). If such a method exists, it is executed before the serialization
+process starts. This allows you to define custom logic to prepare the object for serialization, such
+as cleaning up sensitive data or performing additional data manipulation.
+![deserphp](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/3e84e433-2db1-477f-8e19-357c0508fa42)
+
 ### Demonstration
 
 The demonstration on CHEESEHub illustrates an SSH Honeypot by using two machines; a server and client. The server utilizes a modified version of the
