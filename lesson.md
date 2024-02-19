@@ -97,3 +97,29 @@ launch the hacker’s web interfaces in separate browser tabs by clicking the ic
 
 ![attacker-link](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f39fc9c6-f46f-4476-84e2-03a2ec342e02)
 
+On the deserialization vm, open firefox browser, or install any browser you like. Enter http://victim_ip to the URL bar to access the VNC session
+
+![attacker-victim-vnc](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f2223721-b7fd-4914-abb3-825c9de2ec30)
+
+Try going through the website like a normal user, is there anywhere you can exploit, anything you can enter?
+
+Then, on the deserialization vm. use the command gobuster -w /wordlist/wordlist_php -u http://victim_ip to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
+
+![gobuster-command-1](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/8b1e4422-43c3-426b-90aa-eaa4a78358cc)
+
+After running the gobuster rto enumerate the hidden file on the webserver, you will find a new file called debug.php running on the website. To open debug.php, use the command http://victim_ip/debug.php
+
+![webpage-debug](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/1bb997d9-f217-47a0-84de-007e821cc54e)
+
+Now you have found the debug.php, it’s a mistake made by the developer. To access the
+source code of debug.php, you can enter the URL: viewsource:http://192.168.0.11/debug.php?read=debug.php to view the source code of the
+debug.php.
+
+![webpage-debug-2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ad22bd72-e436-4949-8ff3-d512471af9f8)
+
+In the source code of debug.php, there are two Get parameters you can manipulate. One is called read and the other is execute. read can let you check the source code of the websites and execute will allow you to execute file contain PHP source code
+
+![gobuster-command-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ef09ec31-978e-4db2-9bf4-133236cdac82)
+
+When you run the gobuster tool, I am sure you have also found another php file called contact.php. contact.php is the file where the website will process the contact information entered by user, we can see the source code of this file by entering the URL: http://<victim's IP address>/debug.php?read=contact.php
+
