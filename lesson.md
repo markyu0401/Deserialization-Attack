@@ -19,7 +19,7 @@ communications. In php, the code looks like this: serialize(mixed $value): strin
 rebuilding it into an object. Today, the most popular data format for serializing data is JSON.
 Before that, it was XML. In php, the code looks like this:
 unserialize(string $data, array $options = []): mixed
----
+
 
 ## SSH Honeypot
 
