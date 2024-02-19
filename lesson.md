@@ -87,6 +87,7 @@ Next, click the View link to go to the application-specific page and start the a
 ![start](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/5d192067-3366-4c4e-ae9e-106f158a6288)
 Once all the containers have started, launch the hacker and victim’s web interfaces in separate browser tabs by clicking the icon next to the container’s name:
 
-Click the icon next to deserialization to access the VNC session 
+Open the victim terminal and type 'ifconfig' to check the IP address for victim server  
 
-Open the terminal and Enter the command "apt update -y && apt upgrade -y && apt install gobuster -y" to install a tool called gobuster.
+![victim terminal](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/33064a4c-5a86-4e51-bb3c-44a057f0f4e9)
+
