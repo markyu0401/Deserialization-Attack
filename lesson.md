@@ -1,17 +1,25 @@
 ---
 title: "Deserialization Attack "
-teaching: 5
-exercises: 10
+teaching: 30 minutes
+exercises: 30 minutes
 questions:
-- "What is SSH Deserialization?"
-- "Why is Deserialization a Security Concern?"
+- "What is deserialization/serialization?"
+- "What are the php magic methods?"
+- "What are the countermeasures?"
 objectives:
-- "Successfully test the Deserialization Attack."
-keypoints:
-- "Deserialization Explained: Conversion of data from a byte stream back into a copy of the original object, typically used in applications for communication or storing objects.
-Security Risks: Deserialization can introduce vulnerabilities if untrusted data is deserialized, leading to attacks such as remote code execution.
-Common Vulnerabilities: Highlight common vulnerabilities in various programming languages and frameworks.
-Prevention and Mitigation: Strategies to secure deserialization processes, including input validation, use of secure serializers, and employing least privilege principles."
+- "Describe deserialization attacks."
+- "Understand simple exploit."
+- "Write code that avoid deserialization attacks."
+
+What is deserialization/serialization?
+- Serialization is the process of turning some object into a data format that can be restored later.
+People often serialize objects in order to save them to storage, or to send as part of
+communications. In php, the code looks like this: serialize(mixed $value): string
+
+- Deserialization is the reverse of that process, taking data structured from some format, and
+rebuilding it into an object. Today, the most popular data format for serializing data is JSON.
+Before that, it was XML. In php, the code looks like this:
+unserialize(string $data, array $options = []): mixed
 ---
 
 ## SSH Honeypot
