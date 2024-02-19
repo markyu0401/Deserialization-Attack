@@ -23,7 +23,7 @@ Deserialization is the reverse of that process, taking data structured from some
 rebuilding it into an object. Today, the most popular data format for serializing data is JSON.
 Before that, it was XML. In php, the code looks like this:
 unserialize(string $data, array $options = []): mixed
-![Add Deserialization-Attack]({{ page.root }}/fig/add-demodiagram.png)
+![Add Deserialization-Attack]({{ page.root }}/fig/Deserialization-Attack/demodiagram.png)
 ### Demonstration
 
 The demonstration on CHEESEHub illustrates an SSH Honeypot by using two machines; a server and client. The server utilizes a modified version of the
