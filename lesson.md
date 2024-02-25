@@ -98,13 +98,13 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 
 ![attacker-link](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f39fc9c6-f46f-4476-84e2-03a2ec342e02)
 
-5. On the deserialization vm, open firefox browser, or install any browser you like. Enter http://victim_ip to the URL bar to access the VNC session
+5. On the deserialization(hacker) vm, open firefox browser, or install any browser you like. Enter http://victim_ip to the URL bar to access the VNC session
 
 ![attacker-victim-vnc](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f2223721-b7fd-4914-abb3-825c9de2ec30)
 
 6. Try going through the website like a normal user, is there anywhere you can exploit, anything you can enter?
 
-Then, on the deserialization vm. use the command gobuster -w /wordlist/wordlist_php -u http://victim_ip to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
+Then, on the deserialization(hacker) vm. use the command gobuster -w /wordlist/wordlist_php -u http://victim_ip to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
 
 ![gobuster-command-1](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/8b1e4422-43c3-426b-90aa-eaa4a78358cc)
 
