@@ -92,7 +92,6 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 
 ![victim terminal](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/33064a4c-5a86-4e51-bb3c-44a057f0f4e9)
 
-![hacker gobuster](https://gist.github.com/assets/60618569/99805bc1-20d5-45e0-a37c-74dacf9dfa92)
 
 
 4. launch the hacker’s web interfaces in separate browser tabs by clicking the icon next to the deserialization:
@@ -107,7 +106,7 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 
 Then, on the deserialization(hacker) vm. use the command gobuster -w /wordlist/wordlist_php -u http://victim_ip to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
 
-![gobuster-command-1](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/8b1e4422-43c3-426b-90aa-eaa4a78358cc)
+![hacker gobuster](https://gist.github.com/assets/60618569/99805bc1-20d5-45e0-a37c-74dacf9dfa92)
 
 7. After running the gobuster rto enumerate the hidden file on the webserver, you will find a new file called debug.php running on the website. To open debug.php, use the command http://victim_ip/debug.php
 
