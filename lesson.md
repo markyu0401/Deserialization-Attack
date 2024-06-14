@@ -104,7 +104,7 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 
 6. Try going through the website like a normal user, is there anywhere you can exploit, anything you can enter?
 
-Then, on the deserialization(hacker) vm. use the command gobuster -w /wordlist/wordlist_php -u http://victim_ip to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
+Then, on the deserialization(hacker) vm. use the command gobuster dir -w /wordlist/wordlist_php -u http://victim_ip:8080 to list the directory and hidden file on the webserver. Feel free to try other web enumeration tools, and use different wordlist as well.
 
 ![hacker gobuster](https://github.com/markyu0401/Deserialization-Attack/blob/main/fig/hacker%20gobuster.png?raw=true)
 
