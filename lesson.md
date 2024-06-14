@@ -180,8 +180,10 @@ entering all the text, click submit to plant the webshell
 16. On the attacker VM, use the command curl
 http://victim_ip/user_info/test_user.php?cmd=whoami to test whether the planted
 webshell is working or not.
+You can also try http://victim_ip/user_info/test_user.php?cmd=ifconfig
 
-![result](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/f3c29b0e-0756-48ce-97bf-e5058091f85f)
+![result](https://github.com/markyu0401/Deserialization-Attack/blob/main/fig/result%20.png?raw=true)
+
 
 17. A secure server is running on the Secure server's IP address, you are welcome to try attacking
 it, but it does not have the deserialization vulnerability and misconfiguration present on
