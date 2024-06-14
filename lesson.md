@@ -118,7 +118,8 @@ Then, on the deserialization(hacker) vm. use the command gobuster dir -w /wordli
 source code of debug.php, you can enter the URL: http://<victim's IP address>:8080/debug.php?read=debug.php to view the source code of the
 debug.php.
 
-![webpage-debug-2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ad22bd72-e436-4949-8ff3-d512471af9f8)
+![Image Description](https://private-user-images.githubusercontent.com/60618569/305765742-abff5019-6327-446b-b0fc-91bf59594dfb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTgzMzY4NDMsIm5iZiI6MTcxODMzNjU0MywicGF0aCI6Ii82MDYxODU2OS8zMDU3NjU3NDItYWJmZjUwMTktNjMyNy00NDZiLWIwZmMtOTFiZjU5NTk0ZGZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA2MTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNjE0VDAzNDIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZiZGVmMTNlN2JhZGNmMWE4NDVjOGUwNWJiMTg2OTAyOWQyYjYzOTc5NjY0MDJmZjU5ODI1ZWNmOGIyMGM2YWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.5k3cN22LwIRFYNDTUGsEifvX6aGzlgA8kFWj8NFzm08)
+
 
 9. In the source code of debug.php, there are two Get parameters you can manipulate. One is called read and the other is execute. read can let you check the source code of the websites and execute will allow you to execute file contain PHP source code
 
@@ -126,7 +127,8 @@ debug.php.
 
 10. When you run the gobuster tool, I am sure you have also found another php file called contact.php. contact.php is the file where the website will process the contact information entered by user, we can see the source code of this file by entering the URL: http://<victim's IP address>/debug.php?read=contact.php
 
-![webpage-debug-3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/abff5019-6327-446b-b0fc-91bf59594dfb)
+![debug sourcecode](https://github.com/markyu0401/Deserialization-Attack/blob/main/fig/debug%20sourcecode.png?raw=true)
+
 
 11. Upon reviewing the source code of contact.php file, what have you found? There is a critical vulnerability in the file, a deserialization vulnerability.
 
