@@ -92,7 +92,8 @@ vulnerabilities compared to other serialization methods like "serialize()" and
 
 ![victim terminal](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/33064a4c-5a86-4e51-bb3c-44a057f0f4e9)
 
-![victim-ip](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/cf19b27a-1609-480e-bee0-5206a11fc098)
+![hacker gobuster](https://gist.github.com/assets/60618569/99805bc1-20d5-45e0-a37c-74dacf9dfa92)
+
 
 4. launch the hacker’s web interfaces in separate browser tabs by clicking the icon next to the deserialization:
 
