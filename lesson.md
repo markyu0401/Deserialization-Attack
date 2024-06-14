@@ -115,7 +115,7 @@ Then, on the deserialization(hacker) vm. use the command gobuster dir -w /wordli
 ![webpage-debug](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/1bb997d9-f217-47a0-84de-007e821cc54e)
 
 8. Now you have found the debug.php, it’s a mistake made by the developer. To access the
-source code of debug.php, you can enter the URL: viewsource:http://<victim's IP address>/debug.php?read=debug.php to view the source code of the
+source code of debug.php, you can enter the URL: http://<victim's IP address>:8080/debug.php?read=debug.php to view the source code of the
 debug.php.
 
 ![webpage-debug-2](https://github.com/markyu0401/Deserialization-Attack/assets/60618569/ad22bd72-e436-4949-8ff3-d512471af9f8)
